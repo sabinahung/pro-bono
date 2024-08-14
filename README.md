@@ -10,3 +10,5 @@ Collection of the 2024 data was really simple (thankfully). They added a html ta
 I did a multivariable regression analysis with Am Law data and found that profit margin stands out to be a statistically significant factor for both percentage of lawyers performing more than 20 hours at a firm annually and average hours per lawyer.
 
 In this analysis, I used percentage of lawyers performing more than 20 hours at a firm annually as a proxy for whether or how strong a firm's pro bono culture was, while average hours indicates how many total hours (gross revenue in pro bono terms).
+
+I also found that while racial diversity does not as strongly affect pro bono culture at a firm, it is highly statistically significant and postively correlated with average hours per lawyer. 
