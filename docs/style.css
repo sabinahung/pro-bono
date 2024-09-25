@@ -55,8 +55,7 @@ h1 {
 
 iframe, img {
     max-width: 100%;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
+
     margin:auto;
 }
 
@@ -127,7 +126,6 @@ code {
 
 figure {
     margin: 0;
-    padding-bottom: 1.2em;
 }
 
 figcaption {
