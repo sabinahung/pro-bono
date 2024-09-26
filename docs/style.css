@@ -113,13 +113,11 @@ code {
     font-weight: 700;
  }
 
-.footer {
+.chart-deck{
     font-family: Arial, Helvetica, sans-serif;
-    background: #e1e1e1;
-    text-align: center;
-    font-size: 18px;
-    margin-top: 4em;
-    padding: 4em 0;
+    font-size: 1em;
+    line-height: 1.5em;;
+
 }
 
 figure {
@@ -133,4 +131,12 @@ figcaption {
     margin-top: 0.5em;
     color: #666;
     text-align: left;
+}
+.footer {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e1e1e1;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 4em;
+    padding: 4em 0;
 }
