@@ -94,8 +94,8 @@ p {
     padding-bottom: 1.2em;
 }
 .chart-container {
-    margin: 0;
-    padding-bottom: 1.5em;
+    margin: 1.5em 0 3em 0;
+    /* padding-bottom: 1.5em; */
 }
 ol {
     margin: 0;
