@@ -94,7 +94,7 @@ p {
     padding-bottom: 1.2em;
 }
 .chart-container {
-    margin: 1.5em 0 3em 0;
+    margin: 1.5em 0 1.5em 0;
     /* padding-bottom: 1.5em; */
 }
 ol {
@@ -107,23 +107,23 @@ code {
     font-family: 'Courier New', monospace;
     background: #fff880;
 }
-#g-60hrs_pro_bono-_1_-laptop, #g-60hrs_pro_bono-_1_-full-size, #g-60hrs_pro_bono-_1_-mobile {
+#g-scatter_profit-margin_avg1-laptop, #g-scatter_profit-margin_avg1-full-size, #g-scatter_profit-margin_avg1-mobile, #g-60hrs_pro_bono-_1_-full-size, #g-60hrs_pro_bono-_1_-laptop, #g-60hrs_pro_bono-_1_-mobile {
     display: none;
 }
 @media (max-width: 490px) {
-    #g-60hrs_pro_bono-_1_-mobile {
+    #g-scatter_profit-margin_avg1-mobile,  #g-60hrs_pro_bono-_1_-mobile {
         display: block;
     }
 }
 
 @media (min-width: 490px) and (max-width: 620px) {
-    #g-60hrs_pro_bono-_1_-laptop {
+    #g-scatter_profit-margin_avg1-laptop, #g-60hrs_pro_bono-_1_-laptop {
         display: block;
     }
 }
 
 @media (min-width: 620px)  {
-    #g-60hrs_pro_bono-_1_-full-size {
+    #g-scatter_profit-margin_avg1-full-size, #g-60hrs_pro_bono-_1_-full-size {
         display: block;
     }
 }
@@ -144,7 +144,7 @@ code {
 
 .chart-deck{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
+    font-size: .8em;
     line-height: 1.5em;;
 
 }

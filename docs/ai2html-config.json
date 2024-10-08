@@ -1,0 +1,29 @@
+{
+    "fonts": [
+        {
+            "aifont": "HelveticaNeue-Light",
+            "family": "Helvetica Neue",
+            "weight": "200",
+            "style": ""
+        },
+        {
+            "aifont": "HelveticaNeue-Medium",
+            "family": "Helvetica Neue",
+            "weight": "600",
+            "style": ""
+        },
+        {
+            "aifont": "HelveticaNeue-Bold",
+            "family": "Helvetica Neue",
+            "weight": "700",
+            "style": ""
+        },
+        {
+            "aifont": "HelveticaNeue",
+            "family": "Helvetica Neue",
+            "weight": "400",
+            "style": ""
+        }
+    ]
+}
+
