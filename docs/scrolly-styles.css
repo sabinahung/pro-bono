@@ -10,7 +10,7 @@
     /* transform: translate(0px, 0px); */
     z-index: 1;
     height: 100svh;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     overflow: hidden;
     /* Center things inside */
