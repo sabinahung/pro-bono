@@ -898,27 +898,28 @@
         <!-- </div> -->
 
 		<div class="steps-container">
-			<div class="step" id="step-zero">
-			<!-- undo changes from step one -->
-			</div>
+			<!-- <div class="step" id="step-zero">
+			</div> -->
             <div class="step" id="step-one">
                 <div>
-					<p>This is a scatterplot of the Am Law 200 law firms and their performances in three different aspects: Profit margin, racial diversity and pro bono performance. Each dot is a law firm.</p>                 
+					<p>This scatterplot shows the performance of Am Law 200 firms in three different areas: profit margin, racial diversity, and pro bono work. Each dot represents a law firm.</p>                 
                 </div>
             </div>
             <div class="step" id="step-two">
-				<p>The <span style="background:#fde3ea">x-axis</span> represents the percentage of racially diverse attorneys. The <span style="background:#e1f1ff">y-axis</span> represents average pro bono hours per attorney in 2023.</p>
+				<p>The <span style="background:#fde3ea">x-axis</span> represents the percentage of racially diverse attorneys. The <span style="background:#e1f1ff">y-axis</span> represents average pro bono hours performed per attorney in 2023.</p>
 
             </div>
             <div class="step" id="step-three">
-				<p>Firms are labeled in four colors based on their profit margin.</p>
-                <p>Firms that are in the lower 25th percentile of profit margin are in blue, while firms in the upper 25th percentile are in orange.</p>
+				<p>Firms are color-coded based on their profit margin, categorized into four groups: the <span style="background:#05718e8c;"> lowest 25th percentile</span>, <span style="background: #9abec89c">25th–50th percentile</span>, <span style="background:#fed7a08c;">50th–75th percentile</span>, and <span style="background:#f7931d80;">above the 75th percentile</span>.</p>
             </div>
 			<div class="step" id="step-four">
-				<p>Firms with higher profit margins perform</p>
+				<p>While there is a wide variance of pro bono performance among the higher profit margin groups, more firms in these groups tend to achieve higher pro bono hours.</p>
 			</div>
 			<div class="step" id="step-five">
-				<p>Firms with lower profit margins perform</p>
+				<p>In contrast, firms in the lower profit margin groups tend to contribute fewer hours to pro bono work.</p>
+			</div>
+			<div class="step" id="step-six">
+				<p>Firms with more financial resources and higher raical diversity average more pro bono hours.</p>
 			</div>
 		</div>
         </div>
@@ -1299,9 +1300,6 @@
 			d3.selectAll('#lower').classed('hidden', false)
 			d3.selectAll('#lower-middle').classed('hidden', false)
 
-			// undo changes from step six
-
-
         })
 
 
@@ -1309,6 +1307,11 @@
 		// show end state
 		d3.select('#step-six').on('stepin', function (e) {
 
+			// do changes for step six
+			d3.selectAll("#upper [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
+			d3.selectAll("#highlight").classed('hidden', false).style('opacity', 0.15)
+			d3.selectAll("#upper").classed('hidden', false)
+			d3.selectAll("#upper-middle").classed('hidden', false)
 		})
 
     </script>
