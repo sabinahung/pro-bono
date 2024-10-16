@@ -907,7 +907,7 @@
                 </div>
             </div>
             <div class="step" id="step-two">
-				<p>The x-axis represents the percentage of racially diverse attorneys. The y-axis represents average pro bono hours per attorney in 2023.</p>
+				<p>The <span style="background:#fde3ea">x-axis</span> represents the percentage of racially diverse attorneys. The <span style="background:#e1f1ff">y-axis</span> represents average pro bono hours per attorney in 2023.</p>
 
             </div>
             <div class="step" id="step-three">
@@ -1201,22 +1201,34 @@
         /* initial state*/
         hideNote()
 
-        d3.select("#step-one").on('stepout', function (e) {
-            if (e.detail.direction === 'up') {
-                // undo the changes from step one
-                // hideNote()
-            }
-        })
+        // d3.select("#step-one").on('stepout', function (e) {
+        //     if (e.detail.direction === 'up') {
+		// 	console.log("Scrolling up")
+
+		// 	d3.selectAll("#x-y").classed('hidden', true)
+		// 	d3.selectAll(".g-pstyle2").classed('hidden', true)
+        //     }
+        // })
 
         d3.select("#step-one").on('stepin', function (e) {
             console.log("Got to step one")
 
             // do changes for step one
 
-            d3.select("#").classed('hidden', false)
-            d3.select("#").classed('hidden', false)
+			d3.selectAll("#x-y").classed('hidden', true)
+			d3.selectAll(".g-pstyle2").classed('hidden', true)
+
+			d3.selectAll('#lower').classed('hidden', false)
+			d3.selectAll('#lower-middle').classed('hidden', false)
+			d3.selectAll("#upper").classed('hidden', false)
+			d3.selectAll("#upper-middle").classed('hidden', false)
+
+			d3.selectAll('#g-ai0-6').style('background', 'none')
+			d3.selectAll('#g-ai0-16').style('background', 'none')
+
         })
 
+		// explain x-y axis
         d3.select("#step-two").on('stepin', function (e) {
 
             // undo changes from step one
@@ -1226,29 +1238,78 @@
             console.log("Got to step two")
 			d3.selectAll("#x-y").classed('hidden', false)
 			d3.selectAll(".g-pstyle2").classed('hidden', false)
-            // d3.selectAll("").style('stroke', 'black')
+			d3.selectAll('#g-ai0-6').style('background', '#e1f1ff')
+			d3.selectAll('#g-ai0-16').style('background', '#fde3ea')
+
+			d3.selectAll('#lower').classed('hidden', true)
+			d3.selectAll('#lower-middle').classed('hidden', true)
+			d3.selectAll("#upper").classed('hidden', true)
+			d3.selectAll("#upper-middle").classed('hidden', true)
+
+			// undo changes from step three
+			d3.selectAll("#g-scatter_profit-margin_avg1-full-size .g-pstyle0").style('font-weight', 200)
+
         })
 
+		// categorized into four colors based on profit margin
         d3.select("#step-three").on('stepin', function (e) {
-            // undo changes from step two
-            d3.selectAll("").style('stroke', 'none')
+            d3.selectAll("#g-scatter_profit-margin_avg1-full-size .g-pstyle0").style('font-weight', 'bold')
+
+			// undo changes from step two
+
+			d3.selectAll('#g-ai0-6').style('background', 'none')
+			d3.selectAll('#g-ai0-16').style('background', 'none')
+			d3.selectAll("#x-y").classed('hidden', true)
+			d3.selectAll(".g-pstyle2").classed('hidden', true)
+
+			// undo changes from step four
+			d3.selectAll("#upper").classed('hidden', true)
+			d3.selectAll("#upper-middle").classed('hidden', true)			
+
+
         })
 
+		// explain higher profit margin group
 		d3.select("#step-four").on('stepin', function (e) {
+
+			// undo changes from step three
+			d3.selectAll("#g-scatter_profit-margin_avg1-full-size .g-pstyle0").style('font-weight', 200)
+
+			// do changes for step four
 			d3.selectAll("#upper [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
 			d3.selectAll("#highlight").classed('hidden', false).style('opacity', 0.15)
 			d3.selectAll('#lower').classed('hidden', true)
 			d3.selectAll('#lower-middle').classed('hidden', true)
+			d3.selectAll("#x-y").classed('hidden', false)
+			d3.selectAll(".g-pstyle2").classed('hidden', false)
+
+			// undo changes from step five
+			// show upper and upper-middle dots
+			d3.selectAll("#upper").classed('hidden', false)
+			d3.selectAll("#upper-middle").classed('hidden', false)
         })
 
 		d3.select("#step-five").on('stepin', function (e) {
+
+			// changes for step five
 			d3.selectAll("#upper").classed('hidden', true)
 			d3.selectAll("#upper-middle").classed('hidden', true)
 			d3.selectAll("#lower [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
 			d3.selectAll("#lower-middle [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
 			d3.selectAll('#lower').classed('hidden', false)
 			d3.selectAll('#lower-middle').classed('hidden', false)
+
+			// undo changes from step six
+
+
         })
+
+
+
+		// show end state
+		d3.select('#step-six').on('stepin', function (e) {
+
+		})
 
     </script>
 
