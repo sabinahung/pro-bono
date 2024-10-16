@@ -1185,40 +1185,34 @@
 
 
 	<style>
-        /* .hidden {
-            display: none;
-        } */
+
 		.hidden { visibility: hidden; }
 
     </style>
     <script>
 
         function hideNote() {
-            // annotation: #path-1, #text-1, #path-2, #text-2
-            d3.select("#").classed('hidden', true)
-            d3.select("#").classed('hidden', true)
-            d3.select("#").classed('hidden', true)
-            d3.select("#").classed('hidden', true)
+			d3.selectAll("[data-name='highlight']").classed('hidden', true)
+            d3.selectAll("#highlight").classed('hidden', true)
+            d3.selectAll("#x-y").classed('hidden', true)
+			d3.selectAll(".g-pstyle2").classed('hidden', true)
         }
 
-        /* Scrollytelling code goes under here */
+        /* initial state*/
         hideNote()
 
         d3.select("#step-one").on('stepout', function (e) {
             if (e.detail.direction === 'up') {
                 // undo the changes from step one
-                hideNote()
+                // hideNote()
             }
         })
 
         d3.select("#step-one").on('stepin', function (e) {
             console.log("Got to step one")
-            // undo changes from step two
-            d3.selectAll("").style('stroke', 'none')
 
             // do changes for step one
-            d3.select("#").classed('hidden', false)
-            d3.select("#").classed('hidden', false)
+
             d3.select("#").classed('hidden', false)
             d3.select("#").classed('hidden', false)
         })
@@ -1230,7 +1224,9 @@
 
             // do changes for step two
             console.log("Got to step two")
-            d3.selectAll("").style('stroke', 'black')
+			d3.selectAll("#x-y").classed('hidden', false)
+			d3.selectAll(".g-pstyle2").classed('hidden', false)
+            // d3.selectAll("").style('stroke', 'black')
         })
 
         d3.select("#step-three").on('stepin', function (e) {
@@ -1238,6 +1234,21 @@
             d3.selectAll("").style('stroke', 'none')
         })
 
+		d3.select("#step-four").on('stepin', function (e) {
+			d3.selectAll("#upper [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
+			d3.selectAll("#highlight").classed('hidden', false).style('opacity', 0.15)
+			d3.selectAll('#lower').classed('hidden', true)
+			d3.selectAll('#lower-middle').classed('hidden', true)
+        })
+
+		d3.select("#step-five").on('stepin', function (e) {
+			d3.selectAll("#upper").classed('hidden', true)
+			d3.selectAll("#upper-middle").classed('hidden', true)
+			d3.selectAll("#lower [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
+			d3.selectAll("#lower-middle [data-name='highlight']").classed('hidden', false).style('opacity', 0.15)
+			d3.selectAll('#lower').classed('hidden', false)
+			d3.selectAll('#lower-middle').classed('hidden', false)
+        })
 
     </script>
 
